@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UGCHRISY Price List 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f5f1ed 0%, #faf7f3 50%, #f8f4f0 100%);
+            padding: 50px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: slideDown 0.8s ease-out;
+        }
+        
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
+            color: #b8714f;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        
+        .header h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8em;
+            color: #8a5a38;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .header p {
+            font-size: 1.15em;
+            color: #6b5547;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #b8714f, transparent);
+            margin: 20px auto 0;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .pricing-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,246,244,0.95) 100%);
+            border: 2px solid #d4a896;
+            border-radius: 12px;
+            padding: 45px;
+            box-shadow: 0 15px 50px rgba(184,113,79,0.12);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(184,113,79,0.08), transparent);
+            transition: left 0.6s ease;
+            pointer-events: none;
+        }
+        
+        .pricing-card:hover:before {
+            left: 100%;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-25px);
+            box-shadow: 0 25px 70px rgba(184,113,79,0.18);
+            border-color: #b8714f;
+        }
+        
+        .pricing-card.popular {
+            border: 2.5px solid #b8714f;
+            transform: scale(1.08);
+			margin-bottom: 30px;
+        }
+        
+        .pricing-card.popular:hover {
+            transform: scale(1.08) translateY(-25px);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #b8714f 0%, #d4a896 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9em;
+            color: #b8714f;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .card-subtitle {
+            color: #8a5a38;
+            font-size: 0.95em;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        
+        .video-count {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            color: #4a3f39;
+            font-weight: 600;
+        }
+        
+        .video-count span {
+            display: inline-block;
+            background: linear-gradient(135deg, #b8714f 0%, #d4a896 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-left: 12px;
+            font-size: 0.85em;
+            font-weight: 700;
+        }
+        
+        .features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .features li {
+            padding: 10px 0;
+            color: #5b4e47;
+            font-size: 0.98em;
+            border-bottom: 1px solid rgba(184,113,79,0.15);
+            line-height: 1.6;
+        }
+        
+        .features li:last-child {
+            border-bottom: none;
+        }
+        
+        .features li:before {
+            content: "✓ ";
+            color: #b8714f;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        
+        .price-section {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(184,113,79,0.3);
+            margin-top: 25px;
+        }
+        
+        .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            color: #b8714f;
+            font-weight: 800;
+            margin: 15px 0;
+            letter-spacing: -1px;
+        }
+        
+        .price-per-video {
+            color: #8a7068;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        
+        .savings {
+            background: rgba(184,113,79,0.1);
+            color: #b8714f;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 3px solid #b8714f;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        .static-section {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,246,244,0.95) 100%);
+            border: 2px solid #d4a896;
+            border-radius: 12px;
+            padding: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 50px rgba(184,113,79,0.12);
+        }
+        
+        .static-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #b8714f;
+            margin-bottom: 35px;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        
+        .static-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .static-item {
+            text-align: center;
+            padding: 30px;
+            border: 2px solid #e5d5c8;
+            border-radius: 10px;
+            background: rgba(248,246,244,0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .static-item:hover {
+            border-color: #b8714f;
+            background: rgba(184,113,79,0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(184,113,79,0.15);
+        }
+        
+        .static-item h3 {
+            color: #4a3f39;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        .static-price {
+            color: #b8714f;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+        
+        .conditions {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,246,244,0.95) 100%);
+            border: 2px solid #d4a896;
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 15px 50px rgba(184,113,79,0.12);
+            margin-bottom: 50px;
+        }
+        
+        .conditions h2 {
+            font-family: 'Playfair Display', serif;
+            color: #b8714f;
+            margin-bottom: 35px;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        
+        .condition-group {
+            margin-bottom: 35px;
+        }
+        
+        .condition-group:last-child {
+            margin-bottom: 0;
+        }
+        
+        .condition-group h3 {
+            color: #b8714f;
+            margin-bottom: 15px;
+            font-size: 1.15em;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .condition-group ul {
+            list-style: none;
+        }
+        
+        .condition-group li {
+            padding: 10px 0;
+            color: #5b4e47;
+            border-bottom: 1px solid rgba(184,113,79,0.15);
+            line-height: 1.6;
+        }
+        
+        .condition-group li:last-child {
+            border-bottom: none;
+        }
+        
+        .condition-group li:before {
+            content: "• ";
+            color: #b8714f;
+            margin-right: 10px;
+            font-weight: 700;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #6b5547;
+            margin-top: 70px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,246,244,0.95) 100%);
+            border: 2px solid #d4a896;
+            border-radius: 12px;
+        }
+        
+        .footer h3 {
+            font-family: 'Playfair Display', serif;
+            color: #b8714f;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+        
+        .contact-info {
+            color: #b8714f;
+            font-size: 1.05em;
+            margin: 15px 0;
+            font-weight: 500;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .pricing-card.popular {
+				bottom: 15px;
+                transform: scale(1);
+            }
+            
+            .pricing-card.popular:hover {
+                transform: scale(1) translateY(-25px);
+            }
+            
+            .price {
+                font-size: 2.2em;
+            }
+            
+            .static-section,
+            .conditions {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>UGCHRISY</h1>
+            <h2>Ценообразуване</h2>
+            <p>Премиум UGC видео контент</p>
+            <div class="divider"></div>
+        </div>
+        
+        <div class="pricing-grid">
+            <!-- Starter -->
+            <div class="pricing-card">
+                <div class="card-title">🎬 Starter</div>
+                <div class="card-subtitle">За нови брандове или ограничен бюджет</div>
+                
+                <div class="card-content">
+                    <div class="video-count">
+                        1 видео
+                        <span>+ 2 хука</span>
+                    </div>
+                    
+                    <ul class="features">
+                        <li>Разработка на скрипт</li>
+                        <li>Професионално снимане</li>
+                        <li>Монтаж и цветокорекция</li>
+                        <li>2 варианта за реклама</li>
+                        <li>Реклама права — 3 месеца</li>
+                        <li>2 безплатни корекции</li>
+                    </ul>
+                </div>
+                
+                <div class="price-section">
+                    <div class="price">€85</div>
+                    <div class="price-per-video">€85 за видео</div>
+                </div>
+            </div>
+            
+            <!-- Professional -->
+            <div class="pricing-card">
+                <div class="card-title">💎 Professional</div>
+                <div class="card-subtitle">За качествено съдържание и вариативност</div>
+                
+                <div class="card-content">
+                    <div class="video-count">
+                        2 видеа
+                        <span>+ 4 хука</span>
+                    </div>
+                    
+                    <ul class="features">
+                        <li>Разработка на скрипт</li>
+                        <li>Професионално снимане</li>
+                        <li>Монтаж и цветокорекция</li>
+                        <li>4 варианта за реклама</li>
+                        <li>Реклама права — 3 месеца</li>
+                        <li>2 безплатни корекции</li>
+                    </ul>
+                </div>
+                
+                <div class="price-section">
+                    <div class="price">€145</div>
+                    <div class="price-per-video">€72.50 за видео</div>
+                    <div class="savings">💰 15% по-евтино</div>
+                </div>
+            </div>
+            
+            <!-- Premium -->
+            <div class="pricing-card popular">
+                <div class="popular-badge">ПРЕПОРЪЧАНО</div>
+                <div class="card-title">👑 Premium</div>
+                <div class="card-subtitle">За амбициозни реклама кампании</div>
+                
+                <div class="card-content">
+                    <div class="video-count">
+                        3 видеа
+                        <span>+ 6 хука</span>
+                    </div>
+                    
+                    <ul class="features">
+                        <li>Разработка на скрипт</li>
+                        <li>Професионално снимане</li>
+                        <li>Монтаж и цветокорекция</li>
+                        <li>6 варианта за реклама</li>
+                        <li>Реклама права — 3 месеца</li>
+                        <li>2 безплатни корекции</li>
+                    </ul>
+                </div>
+                
+                <div class="price-section">
+                    <div class="price">€195</div>
+                    <div class="price-per-video">€65 за видео</div>
+                    <div class="savings">💰 23% по-евтино</div>
+                </div>
+            </div>
+            
+            <!-- Extended -->
+            <div class="pricing-card">
+                <div class="card-title">🚀 Extended</div>
+                <div class="card-subtitle">За интензивни кампании</div>
+                
+                <div class="card-content">
+                    <div class="video-count">
+                        5 видеа
+                        <span>+ 10 хука</span>
+                    </div>
+                    
+                    <ul class="features">
+                        <li>Разработка на скрипт</li>
+                        <li>Професионално снимане</li>
+                        <li>Монтаж и цветокорекция</li>
+                        <li>10 варианта за реклама</li>
+                        <li>Реклама права — 3 месеца</li>
+                        <li>2 безплатни корекции</li>
+                    </ul>
+                </div>
+                
+                <div class="price-section">
+                    <div class="price">€300</div>
+                    <div class="price-per-video">€50 за видео</div>
+                    <div class="savings">💰 30% по-евтино</div>
+                </div>
+            </div>
+            
+            <!-- Mega -->
+            <div class="pricing-card">
+                <div class="card-title">💥 Mega</div>
+                <div class="card-subtitle">За флагман кампании</div>
+                
+                <div class="card-content">
+                    <div class="video-count">
+                        7 видеа
+                        <span>+ 14 хука</span>
+                    </div>
+                    
+                    <ul class="features">
+                        <li>Разработка на скрипт</li>
+                        <li>Професионално снимане</li>
+                        <li>Монтаж и цветокорекция</li>
+                        <li>14 варианта за реклама</li>
+                        <li>БОНУС: 1 хук на видео</li>
+                        <li>Реклама права — 3 месеца</li>
+                    </ul>
+                </div>
+                
+                <div class="price-section">
+                    <div class="price">€385</div>
+                    <div class="price-per-video">€55 за видео</div>
+                    <div class="savings">💰 35% по-евтино</div>
+                </div>
+            </div>
+            
+            <!-- Ultimate -->
+            <div class="pricing-card">
+                <div class="card-title">💎 Ultimate</div>
+                <div class="card-subtitle">За дългосрочни партньорства</div>
+                
+                <div class="card-content">
+                    <div class="video-count">
+                        10+
+                        <span>видеа</span>
+                    </div>
+                    
+                    <ul class="features">
+                        <li>Разработка на скрипт</li>
+                        <li>Професионално снимане</li>
+                        <li>Монтаж и цветокорекция</li>
+                        <li>Индивидуална цена</li>
+                        <li>Реклама права — 3 месеца</li>
+                        <li>2 безплатни корекции</li>
+                    </ul>
+                </div>
+                
+                <div class="price-section">
+                    <div class="price">€50—55</div>
+                    <div class="price-per-video">за видео</div>
+                    <div class="savings">💰 До 40% по-евтино</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Static Content -->
+        <div class="static-section">
+            <h2>📸 Статичен контент</h2>
+            <div class="static-grid">
+                <div class="static-item">
+                    <h3>Карусел</h3>
+                    <p>3—5 снимки в един пост, готов за публикуване</p>
+                    <div class="static-price">€65</div>
+                </div>
+                <div class="static-item">
+                    <h3>Статичен пост</h3>
+                    <p>Една снимка със редакция и готово за публикуване</p>
+                    <div class="static-price">€40</div>
+                </div>
+                <div class="static-item">
+                    <h3>Продуктова снимка (с лице)</h3>
+                    <p>Професионално снимане и редакция</p>
+                    <div class="static-price">€45</div>
+                </div>
+                <div class="static-item">
+                    <h3>Продуктова снимка (без лице)</h3>
+                    <p>Производство фокус за продукта</p>
+                    <div class="static-price">€35</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Conditions -->
+        <div class="conditions">
+            <h2>⚙️ Условия на сътрудничество</h2>
+            
+            <div class="condition-group">
+                <h3>✅ Включено в цената:</h3>
+                <ul>
+                    <li>Разработка на скрипт и концепция</li>
+                    <li>Професионално снимане</li>
+                    <li>Монтаж, цветокорекция и звук</li>
+                    <li>До 2 безплатни кръга корекции</li>
+                    <li>Правата за реклама — 3 месеца</li>
+                    <li>Финални файлове: MP4 + вертикален формат</li>
+                </ul>
+            </div>
+            
+            <div class="condition-group">
+                <h3>📅 Срокове:</h3>
+                <ul>
+                    <li>Начало на работа: 2—3 дни след уговорените условия</li>
+                    <li>Доставка на финални видеа: 7—10 работни дни</li>
+                </ul>
+            </div>
+            
+            <div class="condition-group">
+                <h3>📋 Процес на сътрудничество:</h3>
+                <ul>
+                    <li>Уточняване на пакет и детайли</li>
+                    <li>Получаване на бриф от вас (ако има)</li>
+                    <li>Разписана концепция на видеото за одобрение</li>
+                    <li>Снимане и монтаж</li>
+                    <li>Изпращане на видео за корекции (с watermark)</li>
+                    <li>Одобрение и издаване на фактура</li>
+                    <li>Плащане на възнаграждението</li>
+                    <li>Доставка на финално съдържание без watermark</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>📞 Имате въпроси?</h3>
+            <p>На разположение съм да ги обсъдим или да помислим за индивидуална оферта, която да отговаря перфектно на вашите нужди и бюджет.</p>
+            <div class="contact-info">
+                Свържете се с мен за повече информация!
+            </div>
+            <p style="margin-top: 20px; font-size: 0.95em;">UGCHRISY © 2026</p>
+        </div>
+    </div>
+</body>
+</html>
